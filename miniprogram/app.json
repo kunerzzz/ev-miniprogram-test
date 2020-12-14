@@ -1,6 +1,6 @@
 {
   "pages": [
-
+    "pages/hello/hello"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -39,7 +39,7 @@
   },
   "appid": "wx96e8e8f1d48e3a5c",
   "projectname": "EV%E6%B5%8B%E8%AF%95",
-  "libVersion": "2.8.1",
+  "libVersion": "2.13.2",
   "condition": {
     "search": {
       "list": []
