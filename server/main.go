@@ -20,5 +20,7 @@ func main() {
 	app.GET("/hello", handler.GetHello)
 	app.POST("/hello", handler.PostHello)
 
+	app.POST("/subscribe/:template", handler.PostSubscribe)
+
 	app.Run(":80")
 }

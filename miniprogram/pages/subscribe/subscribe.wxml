@@ -1,0 +1,6 @@
+<!--miniprogram/pages/subscribe/subscribe.wxml-->
+<text>订阅消息测试</text>
+<button bindtap="onRequestTap">申请授权</button>
+<button bindtap="onSendDakaTap">发送打卡消息</button>
+<button bindtap="onSendHomeworkTap">发送作业消息</button>
+<text>{{ msg }}</text>

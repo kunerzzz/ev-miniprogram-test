@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/subscribe/subscribe",
     "pages/hello/hello"
   ],
   "window": {

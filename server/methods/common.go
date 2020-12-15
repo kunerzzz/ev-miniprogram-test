@@ -9,3 +9,8 @@ type WXHeader struct {
 	AppID string `header:"X-WX-APPID" binding:"required"`
 	AccessToken string `header:"X-WX-CLOUDBASE-ACCESS-TOKEN" binding:"required"`
 }
+
+type WXResp struct {
+	ErrCode int `json:"errCode"`
+	ErrMsg string `json:"errMsg"`
+}
