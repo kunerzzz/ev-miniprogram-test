@@ -1,0 +1,5 @@
+<!--miniprogram/pages/customer/customer.wxml-->
+<text>客服消息测试</text>
+<button open-type="contact" bindcontact="handleContact" 
+  show-message-title="一个小程序"
+  show-message-card="true">打开客服消息</button>
