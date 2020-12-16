@@ -1,0 +1,13 @@
+<!--miniprogram/pages/share/share.wxml-->
+<text>测试分享</text>
+<button bindtap="onSetUpdatable">设置为动态消息</button>
+<text>{{ isUpdatableMessage }} (设置todoActivityId与动态消息互斥)</text>
+<!-- <button bindtap="onSetPrivate">设置为私密消息</button>
+<text>{{ isPrivateMessage }}</text> -->
+<button bindtap="onNewTodoId">刷新TodoActivityId</button>
+<text>{{ todoActivityId }}</text>
+<button bindtap="onNewUpdatableId">刷新动态消息ActivityId</button>
+<text>{{ activityId }}</text>
+<button bindtap="onAddMember">参与人数加1</button>
+<text>当前人数：{{ member_count }} </text>
+<button open-type="share">显示分享界面</button>
