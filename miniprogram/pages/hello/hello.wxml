@@ -1,8 +1,8 @@
 <!--miniprogram/pages/hello/hello.wxml-->
 <text>Hello</text>
-<button bindtap="onGetTap">GET</button>
+<button bindtap="onGetTap">Hello World!</button>
 <input placeholder="Input Name" bindinput="onNameInput"/>
-<button bindtap="onPostTap">POST</button>
+<button bindtap="onPostTap">Hello [name]!</button>
 <view>
   <text>Message: {{ message }}\n</text>
   <text>AppID: {{ appid }}\n</text>

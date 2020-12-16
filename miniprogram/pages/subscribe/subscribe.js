@@ -36,43 +36,38 @@ Page({
   },
 
   onSendDakaTap: async function() {
-    const c = new wx.cloud.Cloud({
-      resourceEnv: 'test-0gnhz97mc874f295'
-    })
-    await c.init()
     let id = Math.round(Math.random() * 10000).toString()
     let msg = '发送的打卡消息ID是' + id + '\n'
     this.setData({msg})
 
-    const r = await c.callContainer({
-      method: 'POST',
-      path: '/subscribe/daka',
+    const r = await wx.cloud.callFunction({
+      name: 'subscribe',
       data: {
-        id
+        id,
+        name: 'daka',
+        state: 'trial'
       }
     })
     console.log(r)
-    msg += r.data.message
+    msg += r.result.message
     this.setData({msg})
   },
 
   onSendHomeworkTap: async function() {
-    const c = new wx.cloud.Cloud({
-      resourceEnv: 'test-0gnhz97mc874f295'
-    })
-    await c.init()
     let id = Math.round(Math.random() * 10000).toString()
     let msg = '发送的作业消息ID是' + id + '\n'
     this.setData({msg})
 
-    const r = await c.callContainer({
-      method: 'POST',
-      path: '/subscribe/homework',
+    const r = await wx.cloud.callFunction({
+      name: 'subscribe',
       data: {
-        id
+        id,
+        name: 'homework',
+        state: 'trial'
       }
     })
-    msg += r.data.message
+    console.log(r)
+    msg += r.result.message
     this.setData({msg})
   },
 
@@ -80,7 +75,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const template_name = {
+      'daka': '打卡',
+      'homework': '作业'
+    }
 
+    if('template' in options) {
+      this.setData({
+        msg: `来自${template_name[options.template]}消息，ID是${options.id}\n`
+      })
+    }
   },
 
   /**

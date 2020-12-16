@@ -18,36 +18,30 @@ Page({
   },
 
   onGetTap: async function() {
-    const c = new wx.cloud.Cloud({
-      resourceEnv: 'test-0gnhz97mc874f295'
-    })
-    await c.init()
-    const r = await c.callContainer({
-      path: '/hello',
-    })
-    this.setData({
-      appid: 'error',
-      openid: 'error',
-      ...r.data
-    })
-  },
-
-  onPostTap: async function() {
-    const c = new wx.cloud.Cloud({
-      resourceEnv: 'test-0gnhz97mc874f295'
-    })
-    await c.init()
-    const r = await c.callContainer({
-      path: '/hello',
-      method: 'POST',
+    const r = await wx.cloud.callFunction({
+      name: 'hello',
       data: {
-        name: this.data.name
+        name: 'World',
       }
     })
     this.setData({
       appid: 'error',
       openid: 'error',
-      ...r.data
+      ...r.result
+    })
+  },
+
+  onPostTap: async function() {
+    const r = await wx.cloud.callFunction({
+      name: 'hello',
+      data: {
+        name: this.data.name,
+      }
+    })
+    this.setData({
+      appid: 'error',
+      openid: 'error',
+      ...r.result
     })
   },
 
